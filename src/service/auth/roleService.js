@@ -50,7 +50,19 @@ export const roleService = createApi({
         httpMiddlewareBoundary(dispatch, queryFulfilled, args);
       },
     }),
-
+    getTBRoles: builder.query({
+      query: () => {
+        return {
+          url: ROLE_ENDPOINT.FETCH_TB_LIST,
+          method: "GET",
+        };
+      },
+      transformResponse: (result, { dispatch }) =>
+        onHttpSuccess(result, dispatch),
+      async onQueryStarted(args, { dispatch, queryFulfilled }) {
+        await httpMiddlewareBoundary(dispatch, queryFulfilled, args);
+      },
+    }),
   }),
 });
 
@@ -60,4 +72,5 @@ export const {
   useFetchRoleNamesQuery,
   useCreateRoleMutation,
   useUpdateRoleMutation,
+  useGetTBRolesQuery
 } = roleService;

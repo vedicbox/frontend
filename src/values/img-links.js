@@ -5,6 +5,7 @@ export const PLACEHOLDER_IMG = {
   NO_PATIENTS_ALIGN: `${BASE_URL}https://cdn-icons-png.flaticon.com/512/13892/13892741.png`,
   SEARCH_PATIENT: `${BASE_URL}https://cdn-icons-png.flaticon.com/512/10147/10147480.png`,
   NO_STAFF: `${BASE_URL}https://cdn-icons-png.flaticon.com/128/3281/3281869.png`,
+  NO_ROLES: `${BASE_URL}https://cdn-icons-png.flaticon.com/512/1865/1865757.png`,
 };
 
 export const AVATAR_IMG = {

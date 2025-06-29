@@ -32,6 +32,7 @@ export const ROLE_ENDPOINT = {
   CREATE_ROLE: `${BASE_URL}/${LOC_POINT.ROLES}/create`,
   UPDATE_ROLE: `${BASE_URL}/${LOC_POINT.ROLES}/update`,
   FETCH_ROLE_NAMES: `${BASE_URL}/${LOC_POINT.ROLES}/fetch/roleNames`,
+  FETCH_TB_LIST: `${BASE_URL}/${LOC_POINT.ROLES}/fetch-tablist`,
 };
 
 export const PATIENT_ENDPOINT = {

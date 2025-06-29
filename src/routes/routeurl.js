@@ -26,6 +26,9 @@ export const DASHBOARD_ROUTE = {
   },
   FINANCE:{
     BOARD:"finance/board"
+  },
+  MASTER:{
+    ROLES:"master/roles"
   }
 };
 

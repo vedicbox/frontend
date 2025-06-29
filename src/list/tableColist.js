@@ -60,7 +60,7 @@ export const DASHBOARD_HEADER = {
         label: "Fee",
         picker: "fee",
       },
-            {
+      {
         label: "Pay Mode",
         picker: "payTag",
       },
@@ -72,5 +72,33 @@ export const DASHBOARD_HEADER = {
         },
       },
     ]
+  },
+  MASTER: {
+    ROLES: [
+      {
+        label: "Role Id",
+        picker: "_id",
+      },
+      {
+        label: "Role Name",
+        picker: "name",
+      },
+      {
+        label: "Status",
+        picker: "isActive",
+        chip: true,
+      },
+      {
+        label: "Created Date",
+        picker: "createdAt",
+      },
+      {
+        label: "Action",
+        action: true,
+        cellProps: {
+          align: "right",
+        },
+      },
+    ],  
   }
 };

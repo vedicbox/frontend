@@ -41,6 +41,17 @@ export const dashboard_navigation = () => {
         },
       ],
     },
+    {
+      name: "Master",
+      icon: "hugeicons:master-card",
+      children: [
+        {
+          name: "Roles",
+          icon: "eos-icons:role-binding-outlined",
+          path: DASHBOARD_ROUTE.MASTER.ROLES,
+        },
+      ],
+    },
   ];
 };
 

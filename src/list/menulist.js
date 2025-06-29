@@ -37,3 +37,20 @@ export const alignPt_mnlst = (listenerBox) => {
     },
   ];
 };
+
+export const crud_mnlst = (listenerBox) => {
+  return [
+    {
+      label: "Edit",
+      icon: "cuida:edit-outline",
+      handler: listenerBox["edit"],
+      hide: !listenerBox["edit"],
+    },
+    {
+      label: "Delete",
+      icon: "cuida:edit-outline",
+      handler: listenerBox["delete"],
+      hide: !listenerBox["delete"],
+    },
+  ];
+};

@@ -28,5 +28,6 @@ export const PLACEHOLDER_MSG = {
   NO_PRODUCT: "No Product Available",
   NO_PATIENTS_ALIGN: "No Patients Align",
   NO_STAFF: "No Staff Available",
-  SEARCH_PATIENT:"Search Patient"
+  SEARCH_PATIENT:"Search Patient",
+  NO_ROLES:"No Roles Available"
 };
