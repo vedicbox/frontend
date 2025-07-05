@@ -1,6 +1,6 @@
 // Validation Messages
 export const VALIDATION_MSG = {
-  required: "This field is required; please enter the data correctly.",
+  required: "This field is required; please enter the {email} data correctly.",
   email: "The email address is not valid.",
   domain: "The username is unauthorized; please enter the data correctly.",
   url: "The URL is invalid. Please enter a valid URL.",
@@ -28,6 +28,6 @@ export const PLACEHOLDER_MSG = {
   NO_PRODUCT: "No Product Available",
   NO_PATIENTS_ALIGN: "No Patients Align",
   NO_STAFF: "No Staff Available",
-  SEARCH_PATIENT:"Search Patient",
-  NO_ROLES:"No Roles Available"
+  SEARCH_PATIENT: "Search Patient",
+  NO_ROLES: "No Roles Available"
 };

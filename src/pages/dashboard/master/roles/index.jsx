@@ -4,10 +4,11 @@ import Iconify from "components/icons/Iconify";
 import { DASHBOARD_CRUMB } from "list/breadcrumb-list";
 import { NavLink, useNavigate } from "react-router-dom";
 import { PARAMS_ROUTE } from "routes/routeurl";
-import { useGetTBRolesQuery } from "service/auth/roleService";
 import { PLACEHOLDER_IMG } from "values/img-links";
 import { PLACEHOLDER_MSG } from "values/messages";
 import RoleDialogBox from "./dialogBox";
+import PermissionListView from "./elements/PermissionListView";
+import RoleListView from "./elements/RoleListView";
 
 const placeholderDetails = {
   img: PLACEHOLDER_IMG.NO_ROLES,
@@ -16,9 +17,6 @@ const placeholderDetails = {
 
 export default function MasterRolePage() {
   const navigate = useNavigate();
-
-  const { data: roleData } = useGetTBRolesQuery();
-  let rolePayload = roleData?.payload?.rolelist || [];
 
   const handleEditAction = (row) => {
     navigate(PARAMS_ROUTE.EDIT, { state: row });
@@ -48,9 +46,13 @@ export default function MasterRolePage() {
         </Button>
       </CollapsedBreadcrumbs>
 
-      <Grid2 container>
-        <Grid2 size={6}></Grid2>
-        <Grid2 size={6}></Grid2>
+      <Grid2 container spacing={2}>
+        <Grid2 size={4}>
+          <RoleListView />
+        </Grid2>
+        <Grid2 size={8}>
+          <PermissionListView />
+        </Grid2>
       </Grid2>
 
       <RoleDialogBox />

@@ -6,7 +6,6 @@ const CreateRoleForm = forwardRef((props, ref) => {
 
   const [errors, setErrors] = useState({});
 
-  // Use useImperativeHandle to expose the resetForm method to the parent
   useImperativeHandle(ref, () => ({
     preparedData,
   }));

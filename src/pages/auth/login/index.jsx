@@ -6,8 +6,12 @@ import AuthWrapper from "../AuthWrapper";
 import LoginForm from "../forms/LoginForm";
 
 const rules = {
-  email: { required: true, email: true },
-  org: { required: true},
+  email: {
+    required: true,
+    email: true,
+    msgVariable: { email: "user@gmail.com" },
+  },
+  org: { required: true },
   password: { required: true, minlength: 6 },
 };
 
