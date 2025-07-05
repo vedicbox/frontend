@@ -1,17 +1,17 @@
 // Validation Messages
 export const VALIDATION_MSG = {
-  requiredErr: "This field is required; please enter the data correctly.",
-  emailErr: "The email address is not valid.",
-  domainErr: "The username is unauthorized; please enter the data correctly.",
-  urlErr: "The URL is invalid. Please enter a valid URL.",
-  imgErr: "The image type is invalid. Please upload a valid image.",
+  required: "This field is required; please enter the data correctly.",
+  email: "The email address is not valid.",
+  domain: "The username is unauthorized; please enter the data correctly.",
+  url: "The URL is invalid. Please enter a valid URL.",
+  img: "The image type is invalid. Please upload a valid image.",
   length: "The input data length is shorter than the required minimum.",
-  minlengthError: "The input data must meet the minimum length requirement.",
-  maxlengthError: "The input data exceeds the maximum length allowed.",
-  minSizeError: "The minimum value for the threshold has not been met.",
-  maxSizeError: "The maximum value for the threshold has been exceeded.",
-  numericErr: "Only numeric values are allowed.",
-  duplicateErr: "This value has already been taken. Please choose another one.",
+  minlength: "The input data must meet the minimum length requirement.",
+  maxlength: "The input data exceeds the maximum length allowed.",
+  minSizeor: "The minimum value for the threshold has not been met.",
+  maxSizeor: "The maximum value for the threshold has been exceeded.",
+  numeric: "Only numeric values are allowed.",
+  duplicate: "This value has already been taken. Please choose another one.",
 };
 
 // Alert Messages

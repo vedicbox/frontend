@@ -1,8 +1,10 @@
 import { Grid2 } from "@mui/material";
+import CollapsedBreadcrumbs from "components/breadcrumb/CollapsedBreadcrumbs";
 import MuiSubmitBtn from "components/button/MuiSubmitBtn";
 import PatientAddressForm from "components/forms/patients/enroll/AddressDetails";
 import PatientContactForm from "components/forms/patients/enroll/ContactDetails";
 import PatientDetailsForm from "components/forms/patients/enroll/PatientDetails";
+import { DASHBOARD_CRUMB } from "list/breadcrumb-list";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useEnrollPatientMutation } from "service/patientService";
@@ -40,6 +42,8 @@ export default function PatientEnroll() {
 
   return (
     <>
+    <CollapsedBreadcrumbs breadlist={DASHBOARD_CRUMB.PATIENTS.ENROLL} />
+
       <Grid2 container justifyContent="center">
         <Grid2 size={10}>
           <form ref={formRef}>

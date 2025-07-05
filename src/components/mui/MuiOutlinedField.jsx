@@ -7,7 +7,7 @@ export default function MuiOutlinedField(props) {
       <InputLabel error={!!error} className="mb-2">
         {label} <span className="c-red">{required ? "*" : ""}</span>
       </InputLabel>
-      <OutlinedInput size="small" fullWidth {...textProps} />
+      <OutlinedInput error={!!error} size="small" fullWidth {...textProps} />
       <FormHelperText error={!!error}>{error || helperText}</FormHelperText>
     </>
   );

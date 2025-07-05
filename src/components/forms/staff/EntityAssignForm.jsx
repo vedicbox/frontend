@@ -1,10 +1,10 @@
 import {
-    Autocomplete,
-    InputLabel,
-    Paper,
-    Stack,
-    TextField,
-    Typography,
+  Autocomplete,
+  InputLabel,
+  Paper,
+  Stack,
+  TextField,
+  Typography,
 } from "@mui/material";
 import Iconify from "components/icons/Iconify";
 import { useEffect } from "react";
@@ -42,8 +42,8 @@ export default function EntityAssignForm(props) {
           Assign Entity
         </Typography>
       </Stack>
-      <Paper className="px-5 pt-2 pb-5">
-        <div className="mt-3">
+      <Paper sx={{ p: { md: 5, xs: 3 }, pt:3 }}>
+        <>
           <InputLabel className="mb-2">Assign Role</InputLabel>
           <Autocomplete
             disablePortal
@@ -57,7 +57,7 @@ export default function EntityAssignForm(props) {
               <TextField placeholder="Select Role" {...params} />
             )}
           />
-        </div>
+        </>
       </Paper>
     </>
   );

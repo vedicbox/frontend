@@ -1,8 +1,10 @@
 import { LoadingButton } from "@mui/lab";
 import { Grid2, Paper, Stack, Typography } from "@mui/material";
+import CollapsedBreadcrumbs from "components/breadcrumb/CollapsedBreadcrumbs";
 import StaffEnrollmentForm from "components/forms/staff/EnrollmentForm";
 import EntityAssignForm from "components/forms/staff/EntityAssignForm";
 import Iconify from "components/icons/Iconify";
+import { DASHBOARD_CRUMB } from "list/breadcrumb-list";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCreateStaffMutation } from "service/staffService";
@@ -49,8 +51,9 @@ export default function AddStaff() {
 
   return (
     <>
+      <CollapsedBreadcrumbs breadlist={DASHBOARD_CRUMB.STAFF.ADD} />
       <Grid2 container justifyContent="center">
-        <Grid2 size={10}>
+        <Grid2 size={{ md: 10, xs: 12 }}>
           <Stack
             direction="row"
             sx={{
@@ -69,7 +72,7 @@ export default function AddStaff() {
           </Stack>
 
           <form ref={formRef}>
-            <Paper className="p-5">
+            <Paper sx={{ p: { md: 5, xs: 3 } }}>
               <StaffEnrollmentForm
                 errors={errors}
                 processObj={processObj}

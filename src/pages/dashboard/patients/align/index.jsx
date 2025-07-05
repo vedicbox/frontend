@@ -1,15 +1,14 @@
-import { Button } from "@mui/material";
-import Iconify from "components/icons/Iconify";
-import PageRedirectTemplate from "components/template/pageRedirect";
+import DataViewTemplate from "components/template/dataView";
+import { DASHBOARD_CRUMB } from "list/breadcrumb-list";
 import { alignPt_mnlst } from "list/menulist";
 import { DASHBOARD_HEADER } from "list/tableColist";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PARAMS_ROUTE } from "routes/routeurl";
 import { useAlignPatientListQuery } from "service/patientService";
+import { PLACEHOLDER_IMG } from "values/img-links";
 import { PLACEHOLDER_MSG } from "values/messages";
 import DialogBox from "./dialogBox";
-import { PLACEHOLDER_IMG } from "values/img-links";
 
 const placeholderDetails = {
   img: PLACEHOLDER_IMG.NO_PATIENTS_ALIGN,
@@ -22,10 +21,6 @@ export default function ManagePatient() {
 
   const { data: alignPtlist } = useAlignPatientListQuery();
 
-  const handleSearch = () => {
-    navigate(PARAMS_ROUTE.SEARCH);
-  };
-
   const handleDialogStatus = (row) => {
     setDialogObj(row);
     navigate(PARAMS_ROUTE.MOVE);
@@ -37,23 +32,25 @@ export default function ManagePatient() {
     };
   };
 
+  const topBar = [
+    {
+      label: "Consult",
+      icon: "icon-park-twotone:appointment",
+      link: {
+        pathname: PARAMS_ROUTE.SEARCH,
+      },
+    },
+  ];
+
   return (
     <>
-      <div className="text-right">
-        <Button
-          variant="contained"
-          startIcon={<Iconify icon="icon-park-twotone:appointment" />}
-          onClick={handleSearch}
-        >
-          Consult
-        </Button>
-      </div>
-
-      <PageRedirectTemplate
+      <DataViewTemplate
         header={DASHBOARD_HEADER.PATIENTS.ALIGN}
         rows={alignPtlist?.payload || []}
         placeholderDetails={placeholderDetails}
         actionList={(row) => alignPt_mnlst(listenerBox(row))}
+        breadlist={DASHBOARD_CRUMB.PATIENTS.ALIGN}
+        topBar={topBar}
       />
 
       <DialogBox dialogObj={dialogObj} setDialogObj={setDialogObj} />

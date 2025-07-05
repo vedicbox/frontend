@@ -2,7 +2,7 @@ import { Paper } from "@mui/material";
 import PatientSearchCard from "components/card/PatientSearchCard";
 import DisplayContent from "components/placeholder/DisplayContent";
 import ImgReplacer from "components/placeholder/ImgReplacer";
-import SearchField from "components/textfield/SearchField";
+import SearchField from "components/mui/SearchField";
 import { useRef, useState } from "react";
 import { useLazySearchPatientQuery } from "service/patientService";
 import { PLACEHOLDER_IMG } from "values/img-links";

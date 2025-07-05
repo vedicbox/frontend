@@ -3,7 +3,7 @@ import CityAutoField from "components/autocomplete/CityAutoField";
 import CountryAutoField from "components/autocomplete/CountryAutoField";
 import StateAutoField from "components/autocomplete/StateAutoField";
 import Iconify from "components/icons/Iconify";
-import MuiTextField from "components/textfield/MuiTextField";
+import MuiTextField from "components/mui/MuiTextField";
 import { HELPER_TXT_MSG } from "values/messages";
 
 const rules = {

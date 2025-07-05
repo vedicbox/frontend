@@ -114,7 +114,7 @@ export default function StaffEnrollmentForm(props) {
             value={processObj["dob"]}
           />
         </Grid2>
-        <Grid2 size={6}>
+        <Grid2 size={{ md: 6, xs: 12 }}>
           <CountryAutoField
             name="country"
             error={errors["country"]}
@@ -122,7 +122,7 @@ export default function StaffEnrollmentForm(props) {
             onChange={handleMultipleUpdate}
           />
         </Grid2>
-        <Grid2 size={6}>
+        <Grid2 size={{ md: 6, xs: 12 }}>
           <StateAutoField
             name="state"
             error={errors["state"]}
@@ -131,7 +131,7 @@ export default function StaffEnrollmentForm(props) {
             onChange={handleMultipleUpdate}
           />
         </Grid2>
-        <Grid2 size={6}>
+        <Grid2 size={{ md: 6, xs: 12 }}>
           <CityAutoField
             name="city"
             error={errors["city"]}
@@ -141,33 +141,29 @@ export default function StaffEnrollmentForm(props) {
             onChange={handleMultipleUpdate}
           />
         </Grid2>
-        <Grid2 size={6}>
-          <div>
-            <MuiTextField
-              label="Pincode"
-              required={true}
-              error={errors["pincode"]}
-              textProps={{
-                name: "pincode",
-              }}
-              helperText={HELPER_TXT_MSG.defaultText}
-            />
-          </div>
+        <Grid2 size={{ md: 6, xs: 12 }}>
+          <MuiTextField
+            label="Pincode"
+            required={true}
+            error={errors["pincode"]}
+            textProps={{
+              name: "pincode",
+            }}
+            helperText={HELPER_TXT_MSG.defaultText}
+          />
         </Grid2>
         <Grid2 size={12}>
-          <div>
-            <MuiTextField
-              label="Address"
-              required={true}
-              error={errors["address"]}
-              textProps={{
-                name: "address",
-                rows: 2,
-                multiline: true,
-              }}
-              helperText={HELPER_TXT_MSG.defaultText}
-            />
-          </div>
+          <MuiTextField
+            label="Address"
+            required={true}
+            error={errors["address"]}
+            textProps={{
+              name: "address",
+              rows: 2,
+              multiline: true,
+            }}
+            helperText={HELPER_TXT_MSG.defaultText}
+          />
         </Grid2>
       </Grid2>
     </>

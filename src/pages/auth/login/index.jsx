@@ -7,6 +7,7 @@ import LoginForm from "../forms/LoginForm";
 
 const rules = {
   email: { required: true, email: true },
+  org: { required: true},
   password: { required: true, minlength: 6 },
 };
 
@@ -21,7 +22,6 @@ export default function LoginPage() {
   const [signInMutation] = useSignInMutation();
 
   // Bussiness Login
-
   const onChange = debounce((e) => {
     const { name, value } = e.target;
 

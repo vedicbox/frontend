@@ -23,7 +23,7 @@ export default function CollapsedBreadcrumbs({ breadlist, children }) {
 
   return (
     <Stack
-      direction={{ xs: "column", sm: "row" }}
+      direction="row"
       spacing={isMobile ? 2 : 0}
       alignItems="center"
       justifyContent="space-between"

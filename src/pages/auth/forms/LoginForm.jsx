@@ -4,6 +4,7 @@ import Iconify from "components/icons/Iconify";
 import MuiOutlinedField from "components/mui/MuiOutlinedField";
 import MuiTextField from "components/mui/MuiTextField";
 import { useState } from "react";
+import { HELPER_TXT_MSG } from "values/messages";
 
 // ============================|| FIREBASE - LOGIN ||============================ //
 
@@ -11,16 +12,15 @@ const LoginForm = (props) => {
   // Props
   const {
     handleAuthentication,
-    onChange,
-    onBlur,
     errors,
     isLoading,
     innerRef,
+    onChange,
+    onBlur,
   } = props;
 
   // States
   const [showPassword, setShowPassword] = useState(false);
-  const [checked, setChecked] = useState(true);
 
   // Bussiness Login
   const handleClickShowPassword = () => {
@@ -36,12 +36,28 @@ const LoginForm = (props) => {
       <form noValidate ref={innerRef}>
         <div className="mb-4">
           <MuiTextField
+            label="Organization"
+            error={errors["org"]}
+            helperText={HELPER_TXT_MSG.defaultText}
+            textProps={{
+              name: "org",
+              size: "medium",
+              onChange,
+              onBlur,
+            }}
+          />
+        </div>
+        <div className="mb-4">
+          <MuiTextField
             label="Email Address"
             error={errors["email"]}
+            helperText={HELPER_TXT_MSG.defaultText}
             textProps={{
               name: "email",
               placeholder: "user@gmail.com",
               size: "medium",
+              onChange,
+              onBlur,
             }}
           />
         </div>
@@ -50,10 +66,13 @@ const LoginForm = (props) => {
           <MuiOutlinedField
             label="Password"
             error={errors["password"]}
+            helperText={HELPER_TXT_MSG.defaultText}
             textProps={{
               name: "password",
               placeholder: "******",
               type: showPassword ? "text" : "password",
+              onChange,
+              onBlur,
               endAdornment: (
                 <InputAdornment position="end">
                   <IconButton

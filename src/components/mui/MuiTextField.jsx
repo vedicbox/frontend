@@ -7,7 +7,7 @@ export default function MuiTextField(props) {
       <InputLabel error={!!error} className="mb-2">
         {label} <span className="c-red">{required ? "*" : ""}</span>
       </InputLabel>
-      <TextField size="small" fullWidth {...textProps} />
+      <TextField size="small" error={!!error}  fullWidth {...textProps} />
       <FormHelperText error={!!error}>{error || helperText}</FormHelperText>
     </>
   );

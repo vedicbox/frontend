@@ -1,9 +1,8 @@
-import { Button } from "@mui/material";
-import Iconify from "components/icons/Iconify";
-import PageRedirectTemplate from "components/template/pageRedirect";
+import DataViewTemplate from "components/template/dataView";
+import { DASHBOARD_CRUMB } from "list/breadcrumb-list";
 import { staff_mnlst } from "list/menulist";
 import { DASHBOARD_HEADER } from "list/tableColist";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { PARAMS_ROUTE } from "routes/routeurl";
 import { useFetchTbStaffQuery } from "service/staffService";
 import { PLACEHOLDER_IMG } from "values/img-links";
@@ -25,41 +24,32 @@ export default function StaffManagePage() {
     });
   };
 
-  const handleBoard = (row) => {
-    navigate(PARAMS_ROUTE.BOARD, {
-      state: { userId: row.userRef._id, staffId: row._id },
-    });
-  };
-
   const listenerBox = (row) => {
     return {
       edit: () => handleEdit(row),
-      board: () => handleBoard(row),
     };
   };
 
+  const topBar = [
+    {
+      label: "Enroll Staff",
+      icon: "basil:add-solid",
+      link: {
+        pathname: PARAMS_ROUTE.ENROLL,
+      },
+    },
+  ];
+
   return (
     <>
-      <div className="text-right">
-        <Button
-          variant="contained"
-          startIcon={<Iconify icon="basil:add-solid" />}
-          component={NavLink}
-          to={PARAMS_ROUTE.CREATE}
-        >
-          Enroll Staff
-        </Button>
-      </div>
-      <PageRedirectTemplate
+      <DataViewTemplate
         title="Clinic"
         header={DASHBOARD_HEADER.STAFF.MANAGE}
         rows={data?.payload || []}
-        createObj={{
-          title: "Add Staff",
-          icon: "hugeicons:add-team",
-        }}
         actionList={(row) => staff_mnlst(listenerBox(row))}
         placeholderDetails={placeholderDetails}
+        breadlist={DASHBOARD_CRUMB.STAFF.MANAGE}
+        topBar={topBar}
       />
     </>
   );

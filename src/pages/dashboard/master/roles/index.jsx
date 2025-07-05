@@ -1,11 +1,13 @@
-import PageRedirectTemplate from "components/template/pageRedirect";
-import { crud_mnlst } from "list/menulist";
-import { DASHBOARD_HEADER } from "list/tableColist";
-import { useNavigate } from "react-router-dom";
+import { Button, Grid2 } from "@mui/material";
+import CollapsedBreadcrumbs from "components/breadcrumb/CollapsedBreadcrumbs";
+import Iconify from "components/icons/Iconify";
+import { DASHBOARD_CRUMB } from "list/breadcrumb-list";
+import { NavLink, useNavigate } from "react-router-dom";
 import { PARAMS_ROUTE } from "routes/routeurl";
 import { useGetTBRolesQuery } from "service/auth/roleService";
 import { PLACEHOLDER_IMG } from "values/img-links";
 import { PLACEHOLDER_MSG } from "values/messages";
+import RoleDialogBox from "./dialogBox";
 
 const placeholderDetails = {
   img: PLACEHOLDER_IMG.NO_ROLES,
@@ -35,17 +37,23 @@ export default function MasterRolePage() {
 
   return (
     <>
-      <PageRedirectTemplate
-        title="Clinic"
-        header={DASHBOARD_HEADER.MASTER.ROLES}
-        rows={rolePayload || []}
-        createObj={{
-          title: "Add Staff",
-          icon: "hugeicons:add-team",
-        }}
-        actionList={(row) => crud_mnlst(listenerBox(row))}
-        placeholderDetails={placeholderDetails}
-      />
+      <CollapsedBreadcrumbs breadlist={DASHBOARD_CRUMB.PATIENTS.ENROLL}>
+        <Button
+          variant="contained"
+          startIcon={<Iconify icon="" />}
+          component={NavLink}
+          to={PARAMS_ROUTE.CREATE}
+        >
+          Add Role
+        </Button>
+      </CollapsedBreadcrumbs>
+
+      <Grid2 container>
+        <Grid2 size={6}></Grid2>
+        <Grid2 size={6}></Grid2>
+      </Grid2>
+
+      <RoleDialogBox />
     </>
   );
 }

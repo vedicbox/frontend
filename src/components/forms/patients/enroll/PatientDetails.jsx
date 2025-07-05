@@ -9,9 +9,9 @@ import {
   Typography,
 } from "@mui/material";
 import Iconify from "components/icons/Iconify";
-import HeightTextField from "components/textfield/HeightTextField";
-import MuiDatePicker from "components/textfield/MuiDateField";
-import MuiTextField from "components/textfield/MuiTextField";
+import HeightTextField from "components/mui/HeightTextField";
+import MuiDatePicker from "components/mui/MuiDateField";
+import MuiTextField from "components/mui/MuiTextField";
 import { HELPER_TXT_MSG } from "values/messages";
 
 function PatientDetailsForm(props) {

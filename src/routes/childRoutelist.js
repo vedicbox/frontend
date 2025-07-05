@@ -3,7 +3,7 @@ import OverViewPage from "pages/dashboard/overview";
 import AlignPatient from "pages/dashboard/patients/align";
 import PatientsEnrollment from "pages/dashboard/patients/enroll";
 import AddStaff from "pages/dashboard/staff/enrollment/create";
-import EditStaff from "pages/dashboard/staff/enrollment/edit";
+import EditStaff from "pages/dashboard/staff/enrollment/update";
 import StaffManagePage from "pages/dashboard/staff/manage";
 import PageNotFoundPage from "pages/other/PageNotFound";
 import ConsultInitPage from "pages/patientBoard/consult";
@@ -21,7 +21,7 @@ export const dashboard_crl = [
     element: <StaffManagePage />,
   },
   {
-    path: DASHBOARD_ROUTE.STAFF.MANAGE + "/" + PARAMS_ROUTE.CREATE,
+    path: DASHBOARD_ROUTE.STAFF.MANAGE + "/" + PARAMS_ROUTE.ENROLL,
     element: <AddStaff />,
   },
   {

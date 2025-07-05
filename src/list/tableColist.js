@@ -46,7 +46,7 @@ export const DASHBOARD_HEADER = {
       },
       {
         label: "Phone No",
-        picker: "phoneNo",
+        picker: "phone1",
       },
       {
         label: "Doctor Name",

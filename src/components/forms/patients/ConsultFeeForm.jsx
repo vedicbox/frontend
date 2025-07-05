@@ -2,7 +2,7 @@ import { Grid2, Paper } from "@mui/material";
 import MuiOutlinedField from "components/mui/MuiOutlinedField";
 import DisplayContent from "components/placeholder/DisplayContent";
 import ImgReplacer from "components/placeholder/ImgReplacer";
-import MuiAutoComplete from "components/textfield/MuiAutoComplete";
+import MuiAutoComplete from "components/mui/MuiAutoComplete";
 import { PAYMENT_ENUM } from "values/enum";
 import { PLACEHOLDER_IMG } from "values/img-links";
 import { HELPER_TXT_MSG } from "values/messages";

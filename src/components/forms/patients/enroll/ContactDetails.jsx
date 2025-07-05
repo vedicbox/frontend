@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 import Iconify from "components/icons/Iconify";
-import MuiTextField from "components/textfield/MuiTextField";
+import MuiTextField from "components/mui/MuiTextField";
 import { HELPER_TXT_MSG } from "values/messages";
 
 export default function PatientContactForm(props) {
